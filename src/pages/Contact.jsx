@@ -1,11 +1,60 @@
+import { useState } from "react";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    university:"",
+    department: "",
+    message: "",
+  });
+  
+  const [status, setStatus] = useState("");
+  
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Gönderiliyor...");
+  
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbzTcD_8_RYHF68wmrt91rGTl7HRQUVEhT7nrC_DblKt0XR4fZ6SgEZiMidTt6sNlBpPAg/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      setStatus("Başvurunuz başarıyla alındı.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        university:"",
+        department: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("Bir hata oluştu. Lütfen tekrar deneyin.");
+    }
+  };
     return (
       <main className="bg-slate-50 min-h-screen">
   
         {/* Başlık */}
         <section className="bg-white py-20 px-6 text-center">
           <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase">
-            Bize Ulaşın
+            BİZE ULAŞIN
           </p>
   
           <h1 className="text-5xl font-bold text-gray-900 mt-4 mb-6">
@@ -14,15 +63,14 @@ function Contact() {
   
           <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-8">
             Etkinliklerimiz, projelerimiz, gönüllülük faaliyetlerimiz ve iş
-            birlikleri hakkında bizimle iletişime geçebilir, çalışmalarımıza
-            destek olmak için ekibimize katılabilirsiniz.
+            birlikleri hakkında bizimle iletişime geçebilirsiniz.
           </p>
         </section>
   
         {/* İletişim Kartları */}
-        <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-8">
+        <section className="max-w-5xl mx-auto px-6 py-16">
   
-          <div className="bg-white rounded-3xl shadow-md p-8">
+        <div className="bg-white rounded-3xl shadow-md p-10">
             <h2 className="text-2xl font-bold text-[#0F3D3E] mb-6">
               İletişim Bilgileri
             </h2>
@@ -35,46 +83,74 @@ function Contact() {
               </p>
   
               <p>
-                📍 <strong>Konum:</strong><br />
-                Ankara, Türkiye
-              </p>
+  📍 <strong>Adres:</strong>
+   Çankaya / Ankara
+</p>
+
+<a
+  href="https://maps.google.com/?q=Ahlatlıbel,Yavuz+Sultan+Selim+Blv,06810+Çankaya+Ankara"
+  target="_blank"
+  rel="noreferrer"
+  className="inline-block mt-3 text-[#0F3D3E] font-semibold hover:underline"
+>
+<iframe
+  title="FİDE Konum"
+  src="https://www.google.com/maps?q=Ahlatlıbel,Yavuz+Sultan+Selim+Blv,06810+Çankaya+Ankara&output=embed"
+  className="w-full h-64 rounded-2xl mt-6 border-0"
+  loading="lazy"
+/>
+</a>
   
             </div>
           </div>
   
-          <div className="bg-[#0F3D3E] text-white rounded-3xl shadow-md p-8">
-            <h2 className="text-2xl font-bold mb-6">
-              Sosyal Medyada Biz
-            </h2>
+          <div className="text-center py-2">
+  <h2 className="text-xl font-bold text-[#0F3D3E] mb-3">
+    Sosyal Medyada Biz
+  </h2>
+
+  <div className="flex justify-center gap-10 mt-8">
+
+    <a
+      href="https://instagram.com/fikirvedegerler"
+      target="_blank"
+      rel="noreferrer"
+      className="text-5xl hover:scale-110 transition duration-300"
+    >
+      <FaInstagram color="#E4405F" />
+    </a>
+
+    <a
+      href="https://x.com/fikirvedegerler"
+      target="_blank"
+      rel="noreferrer"
+      className="text-5xl hover:scale-110 transition duration-300"
+    >
+      <FaXTwitter color="#000000" />
+    </a>
+
+    <a
+      href="https://tiktok.com/@fikirvedegerler"
+      target="_blank"
+      rel="noreferrer"
+      className="text-5xl hover:scale-110 transition duration-300"
+    >
+      <FaTiktok color="#000000" />
+    </a>
+
+    <a
+      href="mailto:fikirvedegerler@gmail.com"
+      className="text-5xl hover:scale-110 transition duration-300"
+    >
+      <MdEmail color="#EA4335" />
+    </a>
+
+  </div>
+
+  <div className="mt-8 text-center text-white/80 text-sm">
   
-            <div className="space-y-4">
-  
-              <a
-                href="https://instagram.com/fikirvedegerler"
-                target="_blank"
-                rel="noreferrer"
-                className="block bg-white/10 hover:bg-white/20 transition rounded-xl p-4"
-              >
-                📷 Instagram<br />
-                <span className="text-white/80">
-                  @fikirvedegerler
-                </span>
-              </a>
-  
-              <a
-                href="https://tiktok.com/@fikirvedegerler"
-                target="_blank"
-                rel="noreferrer"
-                className="block bg-white/10 hover:bg-white/20 transition rounded-xl p-4"
-              >
-                🎵 TikTok<br />
-                <span className="text-white/80">
-                  @fikirvedegerler
-                </span>
-              </a>
-  
-            </div>
-          </div>
+  </div>
+</div>
   
         </section>
   
@@ -99,7 +175,75 @@ function Contact() {
             >
               Gönüllü Başvuru Formu
             </a>
-  
+            <form onSubmit={handleSubmit} className="grid gap-4 mt-8">
+  <input
+    type="text"
+    name="name"
+    placeholder="Ad Soyad"
+    value={formData.name}
+    onChange={handleChange}
+    required
+    className="border border-gray-300 rounded-xl px-4 py-3"
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="E-posta"
+    value={formData.email}
+    onChange={handleChange}
+    required
+    className="border border-gray-300 rounded-xl px-4 py-3"
+  />
+
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Telefon"
+    value={formData.phone}
+    onChange={handleChange}
+    className="border border-gray-300 rounded-xl px-4 py-3"
+  />
+
+  <input
+    type="text"
+    name="university"
+    placeholder="Üniversite"
+    value={formData.university}
+    onChange={handleChange}
+    className="border border-gray-300 rounded-xl px-4 py-3"
+  />
+  <input
+    type="text"
+    name="department"
+    placeholder="Bölüm"
+    value={formData.department}
+    onChange={handleChange}
+    className="border border-gray-300 rounded-xl px-4 py-3"
+  />
+
+  <textarea
+    name="message"
+    placeholder="Kısaca kendinizden ve neden gönüllü olmak istediğinizden bahsedin."
+    value={formData.message}
+    onChange={handleChange}
+    rows="4"
+    className="border border-gray-300 rounded-xl px-4 py-3"
+  />
+
+  <button
+    type="submit"
+    className="bg-[#0F3D3E] text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition"
+  >
+    Başvuruyu Gönder
+  </button>
+
+  {status && (
+    <p className="text-[#0F3D3E] font-semibold mt-2">
+      {status}
+    </p>
+  )}
+</form>
           </div>
         </section>
   

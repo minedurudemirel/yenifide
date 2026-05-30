@@ -94,7 +94,7 @@ export const events = [
         title: "Öğrencilere Ramazan Kolisi Desteği",
         category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
         date: "1-29 Mart 2025",
-        image: "/events/rmznfd.jpeg",
+        image: "/events/koli.jpeg",
         description:
           "Ramazan ayının paylaşma ve dayanışma ruhunu yaşatmak amacıyla öğrenci evlerine ulaştırılmak üzere yardım kolileri hazırladık. Temel gıda ürünlerinden oluşan kolilerle öğrencilerimizin Ramazan ayını daha huzurlu ve bereketli geçirmelerine katkı sağlamayı hedefledik.",
       },
@@ -130,7 +130,7 @@ export const events = [
   title: "KOVAN - İletişimin Gücü",
   category: "Gelişim Etkinlikleri",
   date: "9 Ekim 2025",
-  image: "/events/kovan.jpg",
+  image: "/events/kov.jpeg",
   description:
     "İletişim sektörünün profesyonellerini öğrencilerle buluşturduğumuz KOVAN etkinliğinde, alanında uzman konuşmacılar deneyimlerini katılımcılarla paylaştı. İnteraktif oturumlarla tamamlanan program gençlerin kişisel ve profesyonel gelişimine katkı sundu.",
 },
@@ -139,6 +139,7 @@ export const events = [
   title: "Lösemili Çocuklar Haftası",
   category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
   date: "2-8 Kasım 2025",
+  image:"/events/los.jpeg",
   description:
     "Lösemili Çocuklar Haftası kapsamında tedavi gören çocuklarımızı ziyaret ederek onların yanında olduğumuzu hissettirdik. Oyunlar, hediyeler ve çeşitli etkinliklerle yüzlerinde tebessüm oluşturmayı amaçladık.",
 },
@@ -147,6 +148,7 @@ export const events = [
   title: "Dünya Çocuk Hakları Günü",
   category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
   date: "20 Kasım 2025",
+  image:"/events/cocukhk.jpeg",
   description:
     "Çocuk hakları konusunda farkındalık oluşturmak amacıyla düzenlediğimiz etkinlikte gençler, çocukların karşılaştığı sorunlara yönelik çözüm önerileri geliştirdi. Katılımcılar çocuk hakları konusunda bilinçlenirken aktif rol alma fırsatı yakaladı.",
 },
@@ -163,6 +165,7 @@ export const events = [
   title: "FİDE'STA",
   category: "Sosyal Etkinlikler",
   date: "20 Aralık 2025",
+  image:"/events/fidesta1.jpeg",
   description:
     "Doğada sanat ve motivasyonu bir araya getiren FİDE'STA etkinliğinde katılımcılar atölye çalışmalarıyla yaratıcılıklarını ortaya koyarken yeni dostluklar kurma fırsatı buldu. Doğayla iç içe geçen etkinlik keyifli anlara sahne oldu.",
 },

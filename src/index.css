@@ -1,1 +1,17 @@
+.logo-title {
+  font-family: "Playfair Display", serif;
+}
+.hero-slide {
+  opacity: 0;
+  animation: heroFade 24s infinite;
+  transform: scale(1.05);
+}
+
+@keyframes heroFade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  25% { opacity: 1; }
+  33% { opacity: 0; }
+  100% { opacity: 0; }
+}
 @import "tailwindcss";
