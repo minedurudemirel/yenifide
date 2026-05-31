@@ -7,3 +7,4 @@ export const announcements = [
         "Derneğimizin olağan genel kurul toplantısı üyelerimizin katılımıyla gerçekleştirilecektir.",
       important: true,
     } ]
+    export default announcements;

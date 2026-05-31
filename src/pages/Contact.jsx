@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import Select from "react-select";
+import { universities } from "../data/universities";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,6 +14,11 @@ function Contact() {
     message: "",
   });
   
+  const universityOptions = universities.map((university) => ({
+    value: university,
+    label: university,
+  }));
+
   const [status, setStatus] = useState("");
   
   const handleChange = (e) => {
@@ -26,7 +33,7 @@ function Contact() {
     setStatus("Gönderiliyor...");
   
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbzTcD_8_RYHF68wmrt91rGTl7HRQUVEhT7nrC_DblKt0XR4fZ6SgEZiMidTt6sNlBpPAg/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbzBzCngnfcOJuO4J7wNEWLASV3T8T7vLNUHFswlwJ5WeJcX-j9zJbys5dHTDQyVGEHjxA/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -169,12 +176,7 @@ function Contact() {
               arasında yerinizi alabilirsiniz.
             </p>
   
-            <a
-              href="#"
-              className="inline-block bg-[#0F3D3E] text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition"
-            >
-              Gönüllü Başvuru Formu
-            </a>
+           
             <form onSubmit={handleSubmit} className="grid gap-4 mt-8">
   <input
     type="text"
@@ -196,23 +198,35 @@ function Contact() {
     className="border border-gray-300 rounded-xl px-4 py-3"
   />
 
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Telefon"
-    value={formData.phone}
-    onChange={handleChange}
-    className="border border-gray-300 rounded-xl px-4 py-3"
-  />
+<input
+  type="tel"
+  name="phone"
+  placeholder="05XXXXXXXXX"
+  value={formData.phone}
+  onChange={handleChange}
+  required
+  pattern="0[0-9]{10}"
+  maxLength="11"
+  className="border border-gray-300 rounded-xl px-4 py-3"
+/>
 
-  <input
-    type="text"
-    name="university"
-    placeholder="Üniversite"
-    value={formData.university}
-    onChange={handleChange}
-    className="border border-gray-300 rounded-xl px-4 py-3"
-  />
+ <div>
+
+  <Select
+  options={universityOptions}
+  isSearchable
+  isClearable
+  placeholder="Üniversiteniz"
+  className="text-left"
+  noOptionsMessage={() => "Üniversite bulunamadı"}
+  onChange={(selected) =>
+    setFormData({
+      ...formData,
+      university: selected?.value || "",
+    })
+  }
+/>
+</div>
   <input
     type="text"
     name="department"

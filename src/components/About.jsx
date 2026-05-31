@@ -96,6 +96,43 @@ const auditBoard = [
               kurulması ve sosyal sorumluluk faaliyetleri gibi
               birçok çalışma gerçekleştirmiştir.
             </p>
+            <br></br>
+            <br></br>
+            <br></br>
+
+             {/* Vizyon Misyon */}
+          <div className="grid md:grid-cols-2 gap-8">
+  
+  <div className="bg-[#0F3D3E] text-white rounded-3xl p-10">
+    <h3 className="text-3xl font-bold mb-6">
+      Vizyonumuz
+    </h3>
+
+    <p className="leading-8 text-white/90">
+      Gençlerin özgürce üretebildiği, yaratıcılık,
+      bilgi ve cesaretin merkezde konumlandığı;
+      akademik mükemmeliyet ile sosyal sorumluluğu
+      birleştiren, değerlerine bağlı ve liderlik
+      potansiyelini geliştiren bir buluşma noktası olmak.
+    </p>
+  </div>  
+
+  <div className="bg-slate-100 rounded-3xl p-10">
+    <h3 className="text-3xl font-bold text-[#0F3D3E] mb-6">
+      Misyonumuz
+    </h3>
+
+    <p className="leading-8 text-gray-700">
+      Üniversite topluluklarının dinamizminden ilham
+      alarak gençleri milli değerlere bağlı, sosyal
+      sorumluluk sahibi, girişimci ve vizyon sahibi
+      bireyler olarak yetiştirmek; onların akademik,
+      sosyal ve profesyonel gelişimlerine katkı sağlayan
+      projeler üretmek.
+    </p>
+  </div>
+
+</div>
   
           </div>
           <section className="bg-white py-20 px-6">
@@ -135,11 +172,11 @@ const auditBoard = [
     </h3>
   </div>
 
-  <div className="flex flex-col items-center gap-10">
-    <MemberCard member={managementBoard[3]} wide />
-    <MemberCard member={managementBoard[4]} wide />
-    <MemberCard member={managementBoard[5]} wide />
-  </div>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <MemberCard member={managementBoard[3]} />
+  <MemberCard member={managementBoard[4]} />
+  <MemberCard member={managementBoard[5]} />
+</div>
 </div>
     </div>
 
@@ -164,39 +201,7 @@ const auditBoard = [
   </div>
 </section>
   
-          {/* Vizyon Misyon */}
-          <div className="grid md:grid-cols-2 gap-8">
-  
-            <div className="bg-[#0F3D3E] text-white rounded-3xl p-10">
-              <h3 className="text-3xl font-bold mb-6">
-                Vizyonumuz
-              </h3>
-  
-              <p className="leading-8 text-white/90">
-                Gençlerin özgürce üretebildiği, yaratıcılık,
-                bilgi ve cesaretin merkezde konumlandığı;
-                akademik mükemmeliyet ile sosyal sorumluluğu
-                birleştiren, değerlerine bağlı ve liderlik
-                potansiyelini geliştiren bir buluşma noktası olmak.
-              </p>
-            </div>
-  
-            <div className="bg-slate-100 rounded-3xl p-10">
-              <h3 className="text-3xl font-bold text-[#0F3D3E] mb-6">
-                Misyonumuz
-              </h3>
-  
-              <p className="leading-8 text-gray-700">
-                Üniversite topluluklarının dinamizminden ilham
-                alarak gençleri milli değerlere bağlı, sosyal
-                sorumluluk sahibi, girişimci ve vizyon sahibi
-                bireyler olarak yetiştirmek; onların akademik,
-                sosyal ve profesyonel gelişimlerine katkı sağlayan
-                projeler üretmek.
-              </p>
-            </div>
-  
-          </div>
+         
   
         </div>
       </section>

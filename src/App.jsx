@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-
+import announcements from "./data/announcements";
 import About from "./components/About";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
@@ -42,15 +42,50 @@ function Home() {
             </p>
 
             <h1 className="text-5xl md:text-8xl font-extrabold leading-tight animate-[slideInLeft_1.3s_ease-out]">
-              Geleceğini İnşa Et
+              Geleceği İnşa Et!
             </h1>
 
-            <p className="mt-6 text-xl md:text-3xl text-white/90">
+            <p className="mt-6 text-xl md:text-3xl italic text-white/90">
               Değerler Fikirlerin FİDE'sidir.
             </p>
           </div>
         </div>
       </section>
+
+      <section className="bg-[#f8f8f8] py-20">
+  <div className="max-w-6xl mx-auto px-6">
+
+    <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase mb-4 text-center">
+      Duyurular
+    </p>
+
+    <h2 className="text-4xl font-bold text-center mb-12">
+      Güncel Duyurular
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      {announcements.map((item) => (
+        <div
+          key={item.id}
+          className="border-l-4 border-[#0F3D3E] pl-6 py-2"
+        >
+          <p className="text-sm text-gray-500 mb-2">
+            {item.date}
+          </p>
+
+          <h3 className="text-2xl font-bold mb-2">
+            {item.title}
+          </h3>
+
+          <p className="text-gray-600">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* BİZ KİMİZ */}
       <section className="grid md:grid-cols-2 min-h-[70vh]">
@@ -62,7 +97,7 @@ function Home() {
         <div className="flex items-center px-8 md:px-20 py-20 bg-white">
           <div>
             <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase mb-4">
-              Biz Kimiz?
+              BİZ KİMİZ?
             </p>
 
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -83,7 +118,7 @@ function Home() {
         <div className="flex items-center px-8 md:px-20 py-20 bg-[#0F3D3E] text-white order-2 md:order-1">
           <div>
             <p className="font-semibold tracking-widest uppercase mb-4 text-white/70">
-              Faaliyetlerimiz
+              FAALİYETLERİMİZ
             </p>
 
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
