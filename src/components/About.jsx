@@ -1,17 +1,24 @@
 import { useState } from "react";
+import BoardTower from "./BoardTower";
 function About() {
 
 const managementBoard = [
   {
     name: "Mehmet Fatih GÜLEÇ",
     role: "Başkan",
-    image: "/board/mehmet-fatih.jpg",
+    image: "/board/mfg.jpg",
   },
   {
     name: "Ali Arda PORAZAN",
     role: "Genel Sekreter",
     image: "/board/ali-arda.jpg",
   },
+  {
+    name: "Enes YILMAZ",
+    role: "Üye",
+    image: "/board/enesy.jpg",
+  },
+
   {
     name: "Zeki Görkem GENÇ",
     role: "Sayman",
@@ -25,7 +32,7 @@ const managementBoard = [
   {
     name: "Muhammet Enes AKTEPE",
     role: "Organizasyon ve İş Birliğinden Sorumlu Başkan Yardımcısı",
-    image: "/board/enes.jpg",
+    image: "/board/enesa.jpg",
   },
   {
     name: "İsmail Berkay TOKYÜREK",
@@ -40,15 +47,16 @@ const auditBoard = [
     image: "/board/ali-tumani.jpg",
   },
   {
+    name: "Mert ARIKAN",
+    role: "Denetim Kurulu Üyesi",
+    image: "/board/mert.jpg",
+  },
+  {
     name: "Koray DOĞAN",
     role: "Denetim Kurulu Üyesi",
     image: "/board/koray.jpg",
   },
-  {
-    name: "Rümeysa SERT",
-    role: "Denetim Kurulu Üyesi",
-    image: "/board/rumeysa.jpg",
-  },
+  
 ];
     return (
       <section
@@ -103,12 +111,12 @@ const auditBoard = [
              {/* Vizyon Misyon */}
           <div className="grid md:grid-cols-2 gap-8">
   
-  <div className="bg-[#0F3D3E] text-white rounded-3xl p-10">
-    <h3 className="text-3xl font-bold mb-6">
+  <div className="bg-slate-100 rounded-3xl p-10">
+    <h3 className="text-3xl font-bold text- [#0F3D3E]mb-6">
       Vizyonumuz
     </h3>
 
-    <p className="leading-8 text-white/90">
+    <p className="leading-8 text-gray-700">
       Gençlerin özgürce üretebildiği, yaratıcılık,
       bilgi ve cesaretin merkezde konumlandığı;
       akademik mükemmeliyet ile sosyal sorumluluğu
@@ -131,10 +139,16 @@ const auditBoard = [
       projeler üretmek.
     </p>
   </div>
-
 </div>
-  
           </div>
+
+          <section className="bg-white py-20 px-6">
+   <BoardTower  />
+
+          </section>
+
+   
+          
           <section className="bg-white py-20 px-6">
   <div className="max-w-7xl mx-auto">
     <div className="text-center mb-14">
@@ -158,9 +172,10 @@ const auditBoard = [
 
       <div className="hidden md:block w-px h-10 bg-[#0F3D3E]/40"></div>
 
-      <div className="grid md:grid-cols-2 gap-10 w-full max-w-3xl">
+      <div className="grid md:grid-cols-3 gap-10 w-full max-w-3xl">
         <MemberCard member={managementBoard[1]} />
         <MemberCard member={managementBoard[2]} />
+        <MemberCard member={managementBoard[3]} />
       </div>
 
       <div className="hidden md:block w-px h-10 bg-[#0F3D3E]/40"></div>
@@ -173,9 +188,9 @@ const auditBoard = [
   </div>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-  <MemberCard member={managementBoard[3]} />
   <MemberCard member={managementBoard[4]} />
   <MemberCard member={managementBoard[5]} />
+  <MemberCard member={managementBoard[6]} />
 </div>
 </div>
     </div>
@@ -206,6 +221,7 @@ const auditBoard = [
         </div>
       </section>
     )
+    
   }
   function MemberCard({ member, large = false, wide = false }) {
     return (

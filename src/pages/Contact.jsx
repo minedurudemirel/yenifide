@@ -3,6 +3,7 @@ import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import Select from "react-select";
+import { FaWhatsapp } from "react-icons/fa";
 import { universities } from "../data/universities";
 function Contact() {
   const [formData, setFormData] = useState({
@@ -83,12 +84,24 @@ function Contact() {
             </h2>
   
             <div className="space-y-5 text-gray-700">
-  
-              <p>
-                📧 <strong>E-posta:</strong><br />
-                fikirvedegerler@gmail.com
-              </p>
-  
+           
+            <p className="flex items-center gap-2">
+  <a
+    href="mailto:fikirvedegerler@gmail.com"
+    className="flex items-center gap-2 hover:opacity-80 transition"
+  >
+    <img
+      src="/icons/gmail.svg"
+      alt="Mail"
+      className="w-6 h-6"
+    />
+<span><strong>Gmail:</strong></span>
+<a href="mailto:fikirvedegerler@gmail.com">
+  fikirvedegerler@gmail.com
+</a>
+  </a>
+</p>
+ 
               <p>
   📍 <strong>Adres:</strong>
    Çankaya / Ankara
@@ -118,39 +131,65 @@ function Contact() {
 
   <div className="flex justify-center gap-10 mt-8">
 
-    <a
-      href="https://instagram.com/fikirvedegerler"
-      target="_blank"
-      rel="noreferrer"
-      className="text-5xl hover:scale-110 transition duration-300"
-    >
-      <FaInstagram color="#E4405F" />
-    </a>
+  <a
+    href="https://instagram.com/fikirvedegerler"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <img
+      src="/icons/instagram.svg"
+      alt="Instagram"
+      className="w-8 h-8 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+    />
+  </a>
 
-    <a
-      href="https://x.com/fikirvedegerler"
-      target="_blank"
-      rel="noreferrer"
-      className="text-5xl hover:scale-110 transition duration-300"
-    >
-      <FaXTwitter color="#000000" />
-    </a>
+  <a
+    href="https://x.com/fikirvedegerler"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <img
+      src="/icons/square-x-twitter.svg"
+      alt="X"
+      className="w-8 h-8 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+    />
+  </a>
 
-    <a
-      href="https://tiktok.com/@fikirvedegerler"
-      target="_blank"
-      rel="noreferrer"
-      className="text-5xl hover:scale-110 transition duration-300"
-    >
-      <FaTiktok color="#000000" />
-    </a>
+  <a
+    href="https://tiktok.com/@fikirvedegerler"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <img
+      src="/icons/tiktok-icon.svg"
+      alt="TikTok"
+      className="w-8 h-8 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+    />
+  </a>
+  <a
+    href="https://linkedin.com/@fikirvedegerler"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <img
+      src="/icons/linkedin.svg"
+      alt="Linkedin"
+      className="w-8 h-8 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+    />
+  </a>
 
-    <a
-      href="mailto:fikirvedegerler@gmail.com"
-      className="text-5xl hover:scale-110 transition duration-300"
-    >
-      <MdEmail color="#EA4335" />
-    </a>
+  <a
+    href="https://youtube.com/@fikirvedegerler"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <img
+      src="/icons/youtube.svg"
+      alt="YouTube"
+      className="w-8 h-8 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+    />
+  </a>
+
 
   </div>
 
@@ -258,10 +297,20 @@ function Contact() {
     </p>
   )}
 </form>
+<a
+  href="https://wa.me/905XXXXXXXXX"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-green-600"
+  aria-label="WhatsApp ile iletişime geç"
+>
+  <FaWhatsapp className="text-4xl" />
+</a>
           </div>
         </section>
   
       </main>
+      
     );
   }
   

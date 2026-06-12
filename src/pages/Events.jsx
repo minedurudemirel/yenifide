@@ -30,7 +30,7 @@ function Events() {
         </h1>
 
         <p className="max-w-3xl mx-auto text-gray-600 text-lg leading-8">
-        Fikir ve Değerler Derneği olarak sosyal sorumluluk, kültür, gelişim ve gençlik alanlarında yürüttüğümüz faaliyetlerle toplumsal fayda üretmeyi amaçlıyoruz. Her etkinliğimiz, gençlerin gelişimine katkı sağlamak ve dayanışma kültürünü güçlendirmek amacıyla hayata geçirilmektedir.
+          Fikir ve Değerler Derneği olarak sosyal sorumluluk, kültür, gelişim ve gençlik alanlarında yürüttüğümüz faaliyetlerle toplumsal fayda üretmeyi amaçlıyoruz. Her etkinliğimiz, gençlerin gelişimine katkı sağlamak ve dayanışma kültürünü güçlendirmek amacıyla hayata geçirilmektedir.
         </p>
       </section>
 
