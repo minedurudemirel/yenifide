@@ -4,6 +4,7 @@ import About from "./components/About";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Ortaklik from "./pages/ortaklik";
+import UpcomingEvents from "./pages/UpcomingEvents";
 
 // Import homepage sections
 import HeroSection from "./components/home/HeroSection";
@@ -35,6 +36,10 @@ function App() {
         <Route path="/etkinlikler" element={<Events />} />
         <Route path="/bize-ulasin" element={<Contact />} />
         <Route path="/ortaklik" element={<Ortaklik />} />
+        <Route
+    path="/geleceketkinlikler"
+    element={<UpcomingEvents />}
+  />
       </Routes>
     </Layout>
   );

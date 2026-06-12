@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { events } from "../../data/events";
 
 const selectedTitles = [
-  "LÖSEMİLİ ÇOCUKKLAR HAFTASI I",
+  "LÖSEMİLİ ÇOCUKLAR HAFTASI I",
   "Deprem Bölgesi Yardımı - 3 Günde 5 İl",
   "Ramazan Fidesi",
   "FİDE Hatıra Ormanı",
@@ -34,6 +34,8 @@ function EventJourney() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  if (journeyEvents.length === 0) return null;
+
   const activeEvent = journeyEvents[activeIndex];
   const activeDate = formatDate(activeEvent.date);
 
@@ -47,19 +49,20 @@ function EventJourney() {
   ];
 
   return (
-    <section className="bg-[#F7F4EF] py-28 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <p className="text-[#0F3D3E] font-semibold tracking-[0.25em] uppercase text-sm mb-4">
+    <section className="bg-[#F7F4EF] py-16 md:py-28 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-20">
+          <p className="text-[#0F3D3E] font-semibold tracking-[0.25em] uppercase text-xs md:text-sm mb-4">
             Etkinlik Hikayemiz
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
             FİDE’nin iz bırakan yolculuğu
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-[440px_1fr] gap-16 items-center">
+        <div className="grid lg:grid-cols-[440px_1fr] gap-8 lg:gap-16 items-center">
+          {/* Desktop yay */}
           <div className="hidden lg:block relative h-[640px]">
             <div className="absolute -left-[430px] top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-[#0F3D3E]/25" />
 
@@ -108,11 +111,40 @@ function EventJourney() {
             })}
           </div>
 
+          {/* Mobil tarih seçici */}
+          <div className="lg:hidden flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 mb-2">
+            {journeyEvents.map((event, index) => {
+              const date = formatDate(event.date);
+              const isActive = index === activeIndex;
+
+              return (
+                <button
+                  key={event.id}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={`snap-center shrink-0 min-w-[108px] rounded-full border px-4 py-3 transition ${
+                    isActive
+                      ? "bg-[#0F3D3E] text-white border-[#0F3D3E] shadow-lg"
+                      : "bg-white text-[#0F3D3E] border-[#0F3D3E]/20"
+                  }`}
+                >
+                  <span className="block text-[10px] uppercase tracking-[0.15em]">
+                    {date.month}
+                  </span>
+                  <span className="block text-lg font-bold leading-tight">
+                    {date.year}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Etkinlik kartı */}
           <article
-  key={activeEvent.id}
-  className="animate-fadeIn grid md:grid-cols-[300px_1fr] gap-8 items-center rounded-[2.5rem] bg-white p-6 md:p-10 shadow-2xl transition-all duration-500"
->
-            <div className="relative h-80 rounded-[2rem] overflow-hidden bg-gray-100">
+            key={activeEvent.id}
+            className="animate-fadeIn grid md:grid-cols-[300px_1fr] gap-5 md:gap-8 items-center rounded-[1.75rem] md:rounded-[2.5rem] bg-white p-4 md:p-10 shadow-xl md:shadow-2xl transition-all duration-500"
+          >
+            <div className="relative h-56 sm:h-72 md:h-80 rounded-[1.4rem] md:rounded-[2rem] overflow-hidden bg-gray-100">
               <img
                 src={activeEvent.image}
                 alt={activeEvent.title}
@@ -121,54 +153,32 @@ function EventJourney() {
             </div>
 
             <div>
-              <p className="text-[#0F3D3E] font-semibold tracking-[0.2em] uppercase text-sm mb-4">
+              <p className="text-[#0F3D3E] font-semibold tracking-[0.16em] md:tracking-[0.2em] uppercase text-xs md:text-sm mb-3 md:mb-4">
                 {activeEvent.date}
               </p>
 
-              <h3 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 leading-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-5 leading-tight">
                 {activeEvent.title}
               </h3>
 
-              <p className="text-gray-600 leading-8 mb-6">
+              <p className="text-gray-600 text-sm sm:text-base leading-7 md:leading-8 mb-5 md:mb-6">
                 {activeEvent.description}
               </p>
 
-              <span className="inline-flex rounded-full bg-[#0F3D3E]/10 text-[#0F3D3E] px-5 py-2 text-sm font-semibold">
+              <span className="inline-flex rounded-full bg-[#0F3D3E]/10 text-[#0F3D3E] px-4 md:px-5 py-2 text-xs md:text-sm font-semibold">
                 {activeEvent.category}
               </span>
 
-              <div className="mt-8">
+              <div className="mt-6 md:mt-8">
                 <Link
                   to="/etkinlikler"
-                  className="inline-flex items-center justify-center rounded-full bg-[#0F3D3E] text-white px-7 py-3 font-semibold hover:bg-[#092829] transition"
+                  className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-[#0F3D3E] text-white px-6 md:px-7 py-3 font-semibold hover:bg-[#092829] transition"
                 >
                   Tüm Etkinlikleri Gör
                 </Link>
               </div>
             </div>
           </article>
-
-          <div className="lg:hidden flex gap-3 overflow-x-auto pb-4">
-            {journeyEvents.map((event, index) => {
-              const date = formatDate(event.date);
-              const isActive = index === activeIndex;
-
-              return (
-                <button
-                  key={event.id}
-                  onClick={() => setActiveIndex(index)}
-                  className={`min-w-28 rounded-full border px-4 py-3 transition ${
-                    isActive
-                      ? "bg-[#0F3D3E] text-white border-[#0F3D3E]"
-                      : "bg-white text-[#0F3D3E] border-[#0F3D3E]/20"
-                  }`}
-                >
-                  <span className="block text-xs uppercase">{date.month}</span>
-                  <span className="block text-xl font-bold">{date.year}</span>
-                </button>
-              );
-            })}
-          </div>
         </div>
       </div>
     </section>

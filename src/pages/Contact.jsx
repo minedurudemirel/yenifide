@@ -156,7 +156,7 @@ function Contact() {
   </a>
 
   <a
-    href="https://tiktok.com/@fikirvedegerler"
+    href="https://tiktok.com/@fikirvedegerlerr"
     target="_blank"
     rel="noreferrer"
   >

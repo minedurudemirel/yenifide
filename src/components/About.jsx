@@ -1,5 +1,4 @@
 import { useState } from "react";
-import BoardTower from "./BoardTower";
 function About() {
 
 const managementBoard = [
@@ -11,18 +10,18 @@ const managementBoard = [
   {
     name: "Ali Arda PORAZAN",
     role: "Genel Sekreter",
-    image: "/board/ali-arda.jpg",
+    image: "/board/arda.jpg",
   },
   {
-    name: "Enes YILMAZ",
-    role: "Üye",
-    image: "/board/enesy.jpg",
+    name: "Kadir KATMAKAYA",
+    role: "Başkan Vekili",
+    image: "/board/kadir.jpg",
   },
 
   {
     name: "Zeki Görkem GENÇ",
     role: "Sayman",
-    image: "/board/zeki-gorkem.jpg",
+    image: "/board/zeki.jpg",
   },
   {
     name: "Süleyman Serhan TOPRAK",
@@ -43,18 +42,23 @@ const managementBoard = [
 const auditBoard = [
   {
     name: "Ali TUMANİ",
-    role: "Denetim Kurulu Üyesi",
-    image: "/board/ali-tumani.jpg",
+    role: "Denetim Kurulu Başkanı",
+    image: "/board/ali.jpg",
   },
   {
     name: "Mert ARIKAN",
-    role: "Denetim Kurulu Üyesi",
+    role: "Denetim Kurulu Başkan Yardımcısı",
     image: "/board/mert.jpg",
   },
   {
     name: "Koray DOĞAN",
     role: "Denetim Kurulu Üyesi",
     image: "/board/koray.jpg",
+  },
+  {
+    name: "Enes YILMAZ",
+    role: "Denetim Kurulu Üyesi",
+    image: "/board/enesy.jpg",
   },
   
 ];
@@ -143,11 +147,11 @@ const auditBoard = [
           </div>
 
           <section className="bg-white py-20 px-6">
-   <BoardTower  />
+ 
 
           </section>
 
-   
+      
           
           <section className="bg-white py-20 px-6">
   <div className="max-w-7xl mx-auto">
@@ -158,7 +162,7 @@ const auditBoard = [
 
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
         Yönetim Kurulumuz
-      </h2>
+      </h2> 
 
       <p className="max-w-3xl mx-auto text-gray-600 mt-5 leading-8">
         Derneğimiz; yönetim kurulu, başkan yardımcıları ve denetim kurulu
@@ -202,8 +206,7 @@ const auditBoard = [
       Denetim Kurulu
     </h3>
   </div>
-
-  <div className="grid md:grid-cols-3 gap-10">
+  <div className="grid md:grid-cols-4 gap-10">
     {auditBoard.map((member) => (
       <MemberCard
         key={member.name}

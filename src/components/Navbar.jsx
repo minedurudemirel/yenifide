@@ -45,14 +45,12 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src="/fidelogo.png"
+            src="/logouzun.jpg"
             alt="Fikir ve Değerler Derneği"
-            className="h-14 w-auto"
+            className="h-18 w-auto"
           />
 
-          <span className="font-bold text-xl logo-title">
-            Fikir ve Değerler Derneği
-          </span>
+        
         </Link>
 
         <button
