@@ -13,7 +13,7 @@ function UpcomingEvents() {
         </h1>
 
         <p className="text-black/70 mt-8 max-w-2xl mx-auto leading-8">
-          Yeni dönem etkinlik takvimimiz hazırlanıyor.
+          Yeni dönem etkinlik takvimimiz hazırlanıyor. <br></br>
           FİDEFEST 2026 ve diğer etkinlik duyuruları çok yakında burada
           yayınlanacak.
         </p>

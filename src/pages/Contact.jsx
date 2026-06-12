@@ -95,10 +95,8 @@ function Contact() {
       alt="Mail"
       className="w-6 h-6"
     />
-<span><strong>Gmail:</strong></span>
-<a href="mailto:fikirvedegerler@gmail.com">
-  fikirvedegerler@gmail.com
-</a>
+
+    <span>fikirvedegerler@gmail.com</span>
   </a>
 </p>
  

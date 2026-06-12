@@ -1,10 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        menuOpen &&
+        navRef.current &&
+        !navRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+  
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, [menuOpen]);
   const menuItems = (
     <>
       <Link to="/" onClick={() => setMenuOpen(false)}>
@@ -41,7 +62,12 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md' : 'bg-black/20 backdrop-blur-sm'} text-white`}>
+    <nav
+    ref={navRef}
+    className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/20 backdrop-blur-sm"
+    } text-white`}
+  >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img

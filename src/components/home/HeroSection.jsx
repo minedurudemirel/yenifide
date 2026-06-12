@@ -27,9 +27,11 @@ function HeroSection() {
         2026 Teması
       </p>
 
-      <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 font-playfair">
-        Geleceği İnşa Et!
-      </h1>
+      <div className="inline-block max-w-full mb-6">
+  <h1 className="typing-title text-5xl lg:text-7xl font-bold leading-tight font-playfair">
+    Geleceği İnşa Et!
+  </h1>
+</div>
 
       <p className="mt-4 text-xl lg:text-3xl italic text-white/90 font-inter mb-8">
         Değerler Fikirlerin FİDE'sidir.

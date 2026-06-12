@@ -174,15 +174,15 @@ const auditBoard = [
     <div className="flex flex-col items-center gap-10">
       <MemberCard member={managementBoard[0]} large />
 
-      <div className="hidden md:block w-px h-10 bg-[#0F3D3E]/40"></div>
+      <div className="w-px h-10 bg-[#0F3D3E]/40"></div>
 
-      <div className="grid md:grid-cols-3 gap-10 w-full max-w-3xl">
+      <div className="grid grid-cols-3 gap-4 md:gap-10 w-full max-w-3xl">
         <MemberCard member={managementBoard[1]} />
         <MemberCard member={managementBoard[2]} />
         <MemberCard member={managementBoard[3]} />
       </div>
 
-      <div className="hidden md:block w-px h-10 bg-[#0F3D3E]/40"></div>
+      <div className=" w-px h-10 bg-[#0F3D3E]/40"></div>
 
       <div className="w-full max-w-4xl">
   <div className="text-center mb-10">
@@ -191,7 +191,7 @@ const auditBoard = [
     </h3>
   </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div className="grid grid-cols-3 gap-4 md:gap-8">
   <MemberCard member={managementBoard[4]} />
   <MemberCard member={managementBoard[5]} />
   <MemberCard member={managementBoard[6]} />
@@ -199,14 +199,15 @@ const auditBoard = [
 </div>
     </div>
 
-    <div className="mt-20 border-t border-gray-200 pt-10">
+    
     <div className="mt-20 border-t border-gray-200 pt-12">
   <div className="text-center mb-12">
     <h3 className="text-3xl font-bold text-[#0F3D3E]">
       Denetim Kurulu
     </h3>
   </div>
-  <div className="grid md:grid-cols-4 gap-10">
+  
+  <div className="grid grid-cols-2 gap-4 md:gap-10">
     {auditBoard.map((member) => (
       <MemberCard
         key={member.name}
@@ -215,7 +216,7 @@ const auditBoard = [
     ))}
   </div>
 </div>
-    </div>
+    
   </div>
 </section>
   
@@ -233,22 +234,22 @@ const auditBoard = [
           wide ? "max-w-3xl w-full" : "flex-col"
         } items-center gap-5 text-center md:text-left`}
       >
-        <img
-          src={member.image}
-          alt={member.name}
-          className={`${
-            large ? "w-36 h-36" : "w-28 h-28"
-          } rounded-full object-cover border-4 border-[#0F3D3E] bg-slate-100`}
-        />
+       <img
+  src={member.image}
+  alt={member.name}
+  className={`${
+    large ? "w-28 h-28 md:w-36 md:h-36" : "w-20 h-20 md:w-28 md:h-28"
+  } rounded-full object-cover border-4 border-[#0F3D3E] bg-slate-100`}
+/>
   
         <div className={wide ? "text-center md:text-left" : "text-center"}>
-          <h3 className="text-xl font-bold text-gray-900">
-            {member.name}
-          </h3>
-  
-          <p className="text-[#0F3D3E] mt-1 leading-6">
-            {member.role}
-          </p>
+        <h3 className="text-sm md:text-xl font-bold text-gray-900">
+  {member.name}
+</h3>
+
+<p className="text-xs md:text-base text-[#0F3D3E] mt-1 leading-5 md:leading-6">
+  {member.role}
+</p>
         </div>
       </div>
     );

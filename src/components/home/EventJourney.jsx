@@ -39,7 +39,7 @@ function EventJourney() {
   const activeEvent = journeyEvents[activeIndex];
   const activeDate = formatDate(activeEvent.date);
 
-  const positions = [
+  const desktopPositions = [
     { top: "4%", left: "72%" },
     { top: "18%", left: "84%" },
     { top: "36%", left: "90%" },
@@ -48,10 +48,19 @@ function EventJourney() {
     { top: "86%", left: "54%" },
   ];
 
+  const mobilePositions = [
+    { top: "10%", left: "58%" },
+    { top: "24%", left: "72%" },
+    { top: "42%", left: "80%" },
+    { top: "60%", left: "77%" },
+    { top: "76%", left: "65%" },
+    { top: "88%", left: "48%" },
+  ];
+
   return (
     <section className="bg-[#F7F4EF] py-16 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center mb-10 md:mb-20">
+        <div className="text-center mb-8 md:mb-14">
           <p className="text-[#0F3D3E] font-semibold tracking-[0.25em] uppercase text-xs md:text-sm mb-4">
             Etkinlik Hikayemiz
           </p>
@@ -61,12 +70,12 @@ function EventJourney() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-[440px_1fr] gap-8 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[440px_1fr] gap-6 lg:gap-16 items-center">
           {/* Desktop yay */}
-          <div className="hidden lg:block relative h-[640px]">
+          <div className="hidden lg:block relative h-[620px]">
             <div className="absolute -left-[430px] top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-[#0F3D3E]/25" />
 
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 transition-all duration-500">
               <p className="text-[#0F3D3E]/60 text-sm uppercase tracking-[0.35em] mb-4">
                 Aktif Tarih
               </p>
@@ -83,7 +92,7 @@ function EventJourney() {
             {journeyEvents.map((event, index) => {
               const date = formatDate(event.date);
               const isActive = index === activeIndex;
-              const pos = positions[index];
+              const pos = desktopPositions[index];
 
               return (
                 <button
@@ -93,7 +102,7 @@ function EventJourney() {
                   className={`absolute z-20 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border transition-all duration-500 ${
                     isActive
                       ? "bg-[#0F3D3E] text-white border-[#0F3D3E] scale-125 shadow-[0_20px_50px_rgba(15,61,62,0.35)]"
-                      : "bg-white text-[#0F3D3E]/60 border-[#0F3D3E]/20 scale-90 hover:scale-95"
+                      : "bg-white text-[#0F3D3E]/60 border-[#0F3D3E]/20 scale-90 opacity-60 hover:opacity-100 hover:scale-95"
                   }`}
                   style={{
                     top: pos.top,
@@ -111,27 +120,48 @@ function EventJourney() {
             })}
           </div>
 
-          {/* Mobil tarih seçici */}
-          <div className="lg:hidden flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 mb-2">
+          {/* Mobil yay */}
+          <div className="lg:hidden relative h-[230px] mb-2 overflow-hidden">
+            <div className="absolute -left-[230px] top-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full border border-[#0F3D3E]/20" />
+
+            <div className="absolute left-6 top-1/2 -translate-y-1/2 z-10">
+              <p className="text-[#0F3D3E]/60 text-[10px] uppercase tracking-[0.3em] mb-2">
+                Aktif Tarih
+              </p>
+
+              <h3 className="text-4xl font-bold text-[#0F3D3E] leading-none">
+                {activeDate.month}
+              </h3>
+
+              <p className="text-3xl font-bold text-gray-900">
+                {activeDate.year}
+              </p>
+            </div>
+
             {journeyEvents.map((event, index) => {
               const date = formatDate(event.date);
               const isActive = index === activeIndex;
+              const pos = mobilePositions[index];
 
               return (
                 <button
                   key={event.id}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`snap-center shrink-0 min-w-[108px] rounded-full border px-4 py-3 transition ${
+                  className={`absolute z-20 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border transition-all duration-500 ${
                     isActive
-                      ? "bg-[#0F3D3E] text-white border-[#0F3D3E] shadow-lg"
-                      : "bg-white text-[#0F3D3E] border-[#0F3D3E]/20"
+                      ? "bg-[#0F3D3E] text-white border-[#0F3D3E] scale-110 shadow-lg"
+                      : "bg-white text-[#0F3D3E]/60 border-[#0F3D3E]/20 scale-90 opacity-60"
                   }`}
+                  style={{
+                    top: pos.top,
+                    left: pos.left,
+                  }}
                 >
-                  <span className="block text-[10px] uppercase tracking-[0.15em]">
+                  <span className="text-[8px] uppercase tracking-[0.08em]">
                     {date.month}
                   </span>
-                  <span className="block text-lg font-bold leading-tight">
+                  <span className="text-xs font-bold leading-none">
                     {date.year}
                   </span>
                 </button>
@@ -144,11 +174,11 @@ function EventJourney() {
             key={activeEvent.id}
             className="animate-fadeIn grid md:grid-cols-[300px_1fr] gap-5 md:gap-8 items-center rounded-[1.75rem] md:rounded-[2.5rem] bg-white p-4 md:p-10 shadow-xl md:shadow-2xl transition-all duration-500"
           >
-            <div className="relative h-56 sm:h-72 md:h-80 rounded-[1.4rem] md:rounded-[2rem] overflow-hidden bg-gray-100">
+            <div className="relative h-52 sm:h-72 md:h-80 rounded-[1.4rem] md:rounded-[2rem] overflow-hidden bg-gray-100">
               <img
                 src={activeEvent.image}
                 alt={activeEvent.title}
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                className="h-full w-full object-cover"
               />
             </div>
 
