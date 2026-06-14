@@ -1,10 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import announcements from "../../data/announcements";
+
 
 function HeroSection() {
-  
 
+  const [announcements, setAnnouncements] = useState([]);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    const callbackName = "loadAnnouncements";
+  
+    window[callbackName] = (data) => {
+      console.log("Sheets duyuruları geldi:", data);
+      setAnnouncements(data);
+      delete window[callbackName];
+      script.remove();
+    };
+  
+    script.src =
+      "https://script.google.com/macros/s/AKfycbwVyxhHmJD_ru4AiuyMEyP82hNeK2G0ALGzfW1PHz8oYH-cOcmv88dd7iWtKW6ZMHRZhA/exec?callback=loadAnnouncements";
+  
+    script.onerror = () => {
+      console.error("Apps Script yüklenemedi");
+    };
+  
+    document.body.appendChild(script);
+  
+    return () => {
+      delete window[callbackName];
+      if (script.parentNode) {
+        script.remove();
+      }
+    };
+  }, []);
   return (
     <>
      {/* HERO */}
