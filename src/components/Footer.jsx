@@ -43,7 +43,7 @@ function Footer() {
             className="flex items-center justify-center md:justify-start gap-3"
           >
             <img
-              src="/fidelogo.png"
+              src="/favicon-fide.png"
               alt="Fikir ve Değerler Derneği"
               className="h-11 w-auto bg-white p-1"
             />
