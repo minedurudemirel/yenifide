@@ -25,7 +25,7 @@ function SponsorsSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase mb-4">
-            İş Birliği Yaptığımız Kurumlar
+            İş BİRLİĞİ Yaptığımız Kurumlar
           </p>
 
           <h2 className="text-4xl font-bold text-center mb-6 font-playfair">
