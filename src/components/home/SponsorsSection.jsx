@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 
 function SponsorsSection() {
-  // Placeholder sponsor logos - in production, these would be real sponsor logos
   const sponsors = [
-    { name: "Sponsor 1", url: "#", color: "from-blue-500 to-purple-600" },
-    { name: "Sponsor 2", url: "#", color: "from-green-500 to-emerald-600" },
-    { name: "Sponsor 3", url: "#", color: "from-red-500 to-pink-600" },
-    { name: "Sponsor 4", url: "#", color: "from-yellow-500 to-orange-600" },
-    { name: "Sponsor 5", url: "#", color: "from-indigo-500 to-teal-600" },
-    { name: "Sponsor 6", url: "#", color: "from-pink-500 to-rose-600" },
+    {
+      name: "Ankara Valiliği",
+      logo: "/vali.png",
+    },
+    {
+      name: "Belediye",
+      logo: "/bld.png",
+    },
+    {
+      name: "Astor",
+      logo: "/astor.jpeg",
+    },
+    {
+      name: "British Town",
+      logo: "/brt.png",
+    },
   ];
 
   return (
@@ -16,7 +25,7 @@ function SponsorsSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase mb-4">
-            Sponsorlarımız ve Ortaklarımız
+            İş Birliği Yaptığımız Kurumlar
           </p>
 
           <h2 className="text-4xl font-bold text-center mb-6 font-playfair">
@@ -24,17 +33,17 @@ function SponsorsSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {sponsors.map((sponsor, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+              className="flex items-center justify-center p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 min-h-[160px]"
             >
-              <div className="w-24 h-12 flex items-center justify-center rounded-lg bg-gradient-to-r {sponsor.color}">
-                <span className="text-white font-bold text-sm font-inter">
-                  {sponsor.name}
-                </span>
-              </div>
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="max-h-24 max-w-[220px] w-auto object-contain"
+              />
             </div>
           ))}
         </div>

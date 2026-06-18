@@ -93,7 +93,7 @@ const auditBoard = [
               Fikir ve Değerler Derneği, gençlerin özgürce
               üretebildiği, fikirlerini cesaretle ifade edebildiği
               ve kendi potansiyelini keşfedebildiği bir alan
-              oluşturmak amacıyla kurulmuştur. </p>
+              oluşturmak amacıyla 2025 yılında kurulmuştur. </p>
 
               <p className="text-gray-700 leading-8 text-lg">
               Dernek; çevre koruma, eğitim, sosyal yardım,
@@ -121,6 +121,7 @@ const auditBoard = [
     </h3>
 
     <p className="leading-8 text-gray-700">
+      <br></br>
       Gençlerin özgürce üretebildiği, yaratıcılık,
       bilgi ve cesaretin merkezde konumlandığı;
       akademik mükemmeliyet ile sosyal sorumluluğu
@@ -135,7 +136,7 @@ const auditBoard = [
     </h3>
 
     <p className="leading-8 text-gray-700">
-      Üniversite topluluklarının dinamizminden ilham
+      Üniversite topluluklarımızın dinamizminden ilham
       alarak gençleri milli değerlere bağlı, sosyal
       sorumluluk sahibi, girişimci ve vizyon sahibi
       bireyler olarak yetiştirmek; onların akademik,
@@ -174,6 +175,22 @@ const auditBoard = [
     <div className="flex flex-col items-center gap-10">
       <MemberCard member={managementBoard[0]} large />
 
+      <div className=" w-px h-10 bg-[#0F3D3E]/40"></div>
+
+<div className="w-full max-w-4xl">
+<div className="text-center mb-10">
+<h3 className="text-3xl font-bold text-[#0F3D3E]">
+Başkan Yardımcıları
+</h3>
+</div>
+
+<div className="grid grid-cols-3 gap-4 md:gap-8">
+<MemberCard member={managementBoard[5]} />
+<MemberCard member={managementBoard[4]} />
+<MemberCard member={managementBoard[6]} />
+</div>
+</div>
+
       <div className="w-px h-10 bg-[#0F3D3E]/40"></div>
 
       <div className="grid grid-cols-3 gap-4 md:gap-10 w-full max-w-3xl">
@@ -182,21 +199,6 @@ const auditBoard = [
         <MemberCard member={managementBoard[3]} />
       </div>
 
-      <div className=" w-px h-10 bg-[#0F3D3E]/40"></div>
-
-      <div className="w-full max-w-4xl">
-  <div className="text-center mb-10">
-    <h3 className="text-3xl font-bold text-[#0F3D3E]">
-      Başkan Yardımcıları
-    </h3>
-  </div>
-
-  <div className="grid grid-cols-3 gap-4 md:gap-8">
-  <MemberCard member={managementBoard[4]} />
-  <MemberCard member={managementBoard[5]} />
-  <MemberCard member={managementBoard[6]} />
-</div>
-</div>
     </div>
 
     

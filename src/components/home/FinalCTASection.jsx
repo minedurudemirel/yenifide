@@ -18,10 +18,10 @@ function FinalCTASection() {
             Gönüllü Ol
           </Link>
           <Link
-            to="/etkinlikler"
+            to="/biz-kimiz"
             className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 border border-white/20"
           >
-            Etkinlikleri Gör
+            Ekibimizi Tanıyın
           </Link>
         </div>
       </div>

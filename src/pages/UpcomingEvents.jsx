@@ -19,10 +19,10 @@ function UpcomingEvents() {
         </p>
 
         <Link
-          to="/etkinlikler"
-          className="inline-flex mt-10 rounded-full border border-black/20 px-8 py-3 text-black hover:border-black/60 transition"
+            to="/etkinlikler"
+          className="inline-flex mt-10 rounded-full font-bold border border-black/20 px-8 py-3 text-black hover:border-black/60 transition"
         >
-          Geçmiş Etkinlikleri İncele
+         Geçmiş Etkinlikleri İncele
         </Link>
 
         <video

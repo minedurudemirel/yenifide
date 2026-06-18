@@ -28,9 +28,7 @@ function Navbar() {
   }, [menuOpen]);
   const menuItems = (
     <>
-      <Link to="/" onClick={() => setMenuOpen(false)}>
-        ANASAYFA
-      </Link>
+     
 
       <Link to="/biz-kimiz" onClick={() => setMenuOpen(false)}>
         BİZ KİMİZ?
@@ -65,19 +63,30 @@ function Navbar() {
     <nav
     ref={navRef}
     className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/20 backdrop-blur-sm"
-    } text-white`}
+      scrolled ? "bg-beige/80 backdrop-blur-md" : "bg-black/20 backdrop-blur-sm"
+    } text-black`}
   >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src="/logouzun.jpg"
-            alt="Fikir ve Değerler Derneği"
-            className="h-18 w-auto"
-          />
+      <Link to="/" className="flex items-center gap-3 group">
+  <img
+    src="/fide.png"
+    alt="Fikir ve Değerler Derneği"
+    className="h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+  />
 
-        
-        </Link>
+  <div className="leading-tight">
+    <h1
+      className="text-xl md:text-xl font-bold text-[#0F3D3E]"
+      style={{ fontFamily: "'Playfair Display', serif" }}
+    >
+      Fikir ve Değerler
+    </h1>
+
+    <p className="text-xs md:text-sm tracking-[0.25em] text-[#0F3D3E]/80 uppercase">
+      Derneğİ
+    </p>
+  </div>
+</Link>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
