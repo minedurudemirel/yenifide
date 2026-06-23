@@ -62,7 +62,7 @@ function EventJourney() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-14">
           <p className="text-[#0F3D3E] font-semibold tracking-[0.25em] uppercase text-xs md:text-sm mb-4">
-            Etkinlik Hikayemiz
+            ETKİNLİK HİKAYEMİZ
           </p>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
