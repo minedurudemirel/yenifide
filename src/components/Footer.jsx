@@ -43,7 +43,7 @@ function Footer() {
             className="flex items-center justify-center md:justify-start gap-3"
           >
             <img
-              src="/favicon-fide.png"
+              src="/fide.png"
               alt="Fikir ve Değerler Derneği"
               className="h-11 w-auto bg-white p-1"
             />
@@ -79,7 +79,7 @@ function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-5 text-center text-xs text-white/40">
-          © 2026 Fikir ve Değerler Derneği. Tüm hakları saklıdır.
+          © 2025 Fikir ve Değerler Derneği. Tüm hakları saklıdır.
         </div>
       </div>
     </footer>

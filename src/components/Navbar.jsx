@@ -1,10 +1,54 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
+
+  const menuItems = (
+    <>
+      <Link
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        to="/biz-kimiz"
+        onClick={() => setMenuOpen(false)}
+      >
+        BİZ KİMİZ
+      </Link>
+
+      <Link
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        to="/etkinlikler"
+        onClick={() => setMenuOpen(false)}
+      >
+        ETKİNLİKLER
+      </Link>
+
+      <Link
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        to="/geleceketkinlikler"
+        onClick={() => setMenuOpen(false)}
+      >
+        GELECEK ETKİNLİKLER
+      </Link>
+
+      <Link
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        to="/bize-ulasin"
+        onClick={() => setMenuOpen(false)}
+      >
+        BİZE ULAŞIN
+      </Link>
+    </>
+  );
+
+  const drawerMenuItems = [
+    { label: "BİZ KİMİZ?", path: "/biz-kimiz" },
+    { label: "ETKİNLİKLER", path: "/etkinlikler" },
+    { label: "GELECEK ETKİNLİKLER", path: "/geleceketkinlikler" },
+    { label: "BİZE ULAŞIN", path: "/bize-ulasin" },
+  ];
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -16,94 +60,204 @@ function Navbar() {
         setMenuOpen(false);
       }
     }
-  
+
     document.addEventListener("mousedown", handleClickOutside);
-  
+
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuOpen]);
-  const menuItems = (
-    <>
-     
-
-      <Link to="/biz-kimiz" onClick={() => setMenuOpen(false)}>
-        BİZ KİMİZ?
-      </Link>
-
-      <Link to="/etkinlikler" onClick={() => setMenuOpen(false)}>
-        ETKİNLİKLER
-      </Link>
-
-      <Link to="/geleceketkinlikler" onClick={() => setMenuOpen(false)}>
-        GELECEK ETKİNLİKLER
-      </Link>
-
-      <Link to="/bize-ulasin" onClick={() => setMenuOpen(false)}>
-        BİZE ULAŞIN
-      </Link>
-    </>
-  );
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    // Initial check
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-    ref={navRef}
-    className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-beige/80 backdrop-blur-md" : "bg-black/20 backdrop-blur-sm"
-    } text-black`}
-  >
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <Link to="/" className="flex items-center gap-3 group">
-  <img
-    src="/fide.png"
-    alt="Fikir ve Değerler Derneği"
-    className="h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
-  />
-
-  <div className="leading-tight">
-    <h1
-      className="text-xl md:text-xl font-bold text-[#0F3D3E]"
-      style={{ fontFamily: "'Playfair Display', serif" }}
+      ref={navRef}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#F8F5EF]/90 backdrop-blur-md shadow-sm"
+          : "bg-black/20 backdrop-blur-sm"
+      }`}
     >
-      Fikir ve Değerler
-    </h1>
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src="/fide.png"
+            alt="Fikir ve Değerler Derneği"
+            className="h-16 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
 
-    <p className="text-xs md:text-sm tracking-[0.25em] text-[#0F3D3E]/80 uppercase">
-      Derneğİ
-    </p>
-  </div>
-</Link>
+          <div className="leading-tight">
+            <h1
+              className="text-xl font-bold text-[#0F3D3E]"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Fikir ve Değerler
+            </h1>
+
+            <p className="text-xs md:text-sm tracking-[0.25em] text-[#0F3D3E]/80 uppercase">
+              DERNEĞİ
+            </p>
+          </div>
+        </Link>
 
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-3xl"
+          onClick={() => setMenuOpen(true)}
+          className="md:hidden text-[#0F3D3E]"
+          aria-label="Menüyü aç"
         >
-          ☰
+          <HiOutlineMenuAlt3 size={32} />
         </button>
 
-        <div className="hidden md:flex gap-8 text-sm font-semibold">
-          {menuItems}
-        </div>
+        <div className="hidden md:flex gap-8 items-center">{menuItems}</div>
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-[#0B2F30] px-6 py-5 flex flex-col gap-4 text-sm font-semibold">
-          {menuItems}
-        </div>
+        <>
+          <div
+            className="fixed inset-0 bg-black/50 z-[55] md:hidden"
+            onClick={() => setMenuOpen(false)}
+          />
+
+          <aside className="fixed top-0 right-0 h-screen w-[82%] max-w-sm bg-[#F8F5EF] z-[60] md:hidden shadow-2xl px-8 py-8 flex flex-col animate-[drawerSlide_0.35s_ease-out]">
+            <div className="flex justify-end">
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="text-[#0F3D3E]"
+                aria-label="Menüyü kapat"
+              >
+                <HiX size={34} />
+              </button>
+            </div>
+
+            <div className="flex flex-col items-center mt-3">
+              <img src="/fide.png" alt="FİDE" className="h-24 w-auto" />
+
+              <h2
+                className="mt-4 text-2xl font-bold text-[#0F3D3E]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Fikir ve Değerler
+              </h2>
+
+              <p className="tracking-[0.35em] text-sm text-[#0F3D3E]/70 uppercase">
+                DERNEĞİ
+              </p>
+
+              <p className="mt-6 text-center italic text-[#0F3D3E]/70 leading-7">
+                "Değerler Fikirlerin FİDE'sidir."
+              </p>
+            </div>
+
+            <div className="my-8 flex items-center gap-4">
+              <div className="h-px flex-1 bg-[#B68D40]/50"></div>
+              <span className="text-[#B68D40] text-xl">❧</span>
+              <div className="h-px flex-1 bg-[#B68D40]/50"></div>
+            </div>
+
+            <div className="flex flex-col">
+              <div className="border-t border-[#B68D40]/50"></div>
+
+              {drawerMenuItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className="group flex items-center justify-between border-b border-[#B68D40]/50 py-5 text-left text-lg font-semibold tracking-wide text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+                >
+                  <span>{item.label}</span>
+
+                  <span className="text-3xl leading-none text-[#0F3D3E] group-hover:translate-x-1 group-hover:text-[#B68D40] transition-all duration-300">
+                    ›
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-auto">
+              <div className="mb-7 flex items-center gap-4">
+                <div className="h-px flex-1 bg-[#B68D40]/50"></div>
+                <span className="text-[#B68D40] text-xl">❧</span>
+                <div className="h-px flex-1 bg-[#B68D40]/50"></div>
+              </div>
+
+              <div className="flex justify-center gap-7">
+                <a
+                  href="https://instagram.com/fikirvedegerler"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/icons/instagram.svg"
+                    alt="Instagram"
+                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://x.com/fikirvedegerler"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/icons/square-x-twitter.svg"
+                    alt="X"
+                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://tiktok.com/@fikirvedegerlerr"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/icons/tiktok-icon.svg"
+                    alt="TikTok"
+                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://linkedin.com/company/fikirvedegerler"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/icons/linkedin.svg"
+                    alt="LinkedIn"
+                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://youtube.com/@fikirvedegerler"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/icons/youtube.svg"
+                    alt="YouTube"
+                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                  />
+                </a>
+              </div>
+
+              <p className="mt-8 text-center text-xs text-[#0F3D3E]/60">
+                © 2025 Fikir ve Değerler Derneği
+              </p>
+            </div>
+          </aside>
+        </>
       )}
     </nav>
   );

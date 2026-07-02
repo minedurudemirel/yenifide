@@ -8,9 +8,11 @@ import { universities } from "../data/universities";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
+    tcNo: "",
+    birthDate: "",
     email: "",
     phone: "",
-    university:"",
+    university: "",
     department: "",
     message: "",
   });
@@ -31,10 +33,30 @@ function Contact() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    const tcRegex = /^[0-9]{11}$/;
+    const phoneRegex = /^05[0-9]{9}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    if (!tcRegex.test(formData.tcNo)) {
+      setStatus("TC Kimlik No 11 haneli olmalıdır.");
+      return;
+    }
+  
+    if (!emailRegex.test(formData.email)) {
+      setStatus("Lütfen geçerli bir e-posta adresi giriniz.");
+      return;
+    }
+  
+    if (!phoneRegex.test(formData.phone)) {
+      setStatus("Telefon numarası 05 ile başlamalı ve 11 haneli olmalıdır.");
+      return;
+    }
+  
     setStatus("Gönderiliyor...");
   
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbzBzCngnfcOJuO4J7wNEWLASV3T8T7vLNUHFswlwJ5WeJcX-j9zJbys5dHTDQyVGEHjxA/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbwF9Y2v1fEmCaan0EsM_OVtZrm4clsDCY02M1SScL3Qh2mN4DB2M70LGJHzl-yxAOXvDQ/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -44,11 +66,14 @@ function Contact() {
       });
   
       setStatus("Başvurunuz başarıyla alındı.");
+  
       setFormData({
         name: "",
+        tcNo: "",
+        birthDate: "",
         email: "",
         phone: "",
-        university:"",
+        university: "",
         department: "",
         message: "",
       });
@@ -224,6 +249,27 @@ function Contact() {
     required
     className="border border-gray-300 rounded-xl px-4 py-3"
   />
+  <input
+  type="text"
+  name="tcNo"
+  placeholder="TC Kimlik No"
+  value={formData.tcNo}
+  onChange={handleChange}
+  required
+  pattern="[0-9]{11}"
+  maxLength="11"
+  inputMode="numeric"
+  className="border border-gray-300 rounded-xl px-4 py-3"
+/>
+
+<input
+  type="date"
+  name="birthDate"
+  value={formData.birthDate}
+  onChange={handleChange}
+  required
+  className="border border-gray-300 rounded-xl px-4 py-3"
+/>
 
   <input
     type="email"

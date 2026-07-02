@@ -230,3 +230,12 @@ html {
 
   animation: typing 2s steps(18) forwards;
 }
+@keyframes drawerSlide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

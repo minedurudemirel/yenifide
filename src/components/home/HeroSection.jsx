@@ -44,7 +44,7 @@ function HeroSection() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/events/hro.mp4" type="video/mp4" />
+          <source src="/events/ses.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-black/50"></div>
