@@ -265,6 +265,7 @@ function Contact() {
 <input
   type="date"
   name="birthDate"
+  placeholder="Doğum Tarihiniz"
   value={formData.birthDate}
   onChange={handleChange}
   required

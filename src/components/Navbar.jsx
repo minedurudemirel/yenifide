@@ -128,7 +128,7 @@ function Navbar() {
             onClick={() => setMenuOpen(false)}
           />
 
-          <aside className="fixed top-0 right-0 h-screen w-[82%] max-w-sm bg-[#F8F5EF] z-[60] md:hidden shadow-2xl px-8 py-8 flex flex-col animate-[drawerSlide_0.35s_ease-out]">
+          <aside className="fixed top-0 right-0 h-screen w-[82%] max-w-sm bg-[#F8F5EF] z-[60] md:hidden shadow-2xl px-8 py-8 flex flex-col overflow-y-auto animate-[drawerSlide_0.35s_ease-out]">
             <div className="flex justify-end">
               <button
                 onClick={() => setMenuOpen(false)}
@@ -172,7 +172,7 @@ function Navbar() {
                   key={item.path}
                   to={item.path}
                   onClick={() => setMenuOpen(false)}
-                  className="group flex items-center justify-between border-b border-[#B68D40]/50 py-5 text-left text-lg font-semibold tracking-wide text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+                  className="group flex items-center justify-between border-b border-[#B68D40]/50 py-2 text-left text-lg font-semibold tracking-wide text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
                 >
                   <span>{item.label}</span>
 
@@ -183,7 +183,7 @@ function Navbar() {
               ))}
             </div>
 
-            <div className="mt-auto">
+            <div className="mt-8 pb-4">
               <div className="mb-7 flex items-center gap-4">
                 <div className="h-px flex-1 bg-[#B68D40]/50"></div>
                 <span className="text-[#B68D40] text-xl">❧</span>
@@ -199,7 +199,7 @@ function Navbar() {
                   <img
                     src="/icons/instagram.svg"
                     alt="Instagram"
-                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    className="w-5 h-5 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
                   />
                 </a>
 
@@ -211,7 +211,7 @@ function Navbar() {
                   <img
                     src="/icons/square-x-twitter.svg"
                     alt="X"
-                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    className="w-5 h-5 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
                   />
                 </a>
 
@@ -223,7 +223,7 @@ function Navbar() {
                   <img
                     src="/icons/tiktok-icon.svg"
                     alt="TikTok"
-                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    className="w-5 h-5 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
                   />
                 </a>
 
@@ -235,7 +235,7 @@ function Navbar() {
                   <img
                     src="/icons/linkedin.svg"
                     alt="LinkedIn"
-                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    className="w-5 h-5 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
                   />
                 </a>
 
@@ -247,7 +247,7 @@ function Navbar() {
                   <img
                     src="/icons/youtube.svg"
                     alt="YouTube"
-                    className="w-7 h-7 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                    className="w-5 h-5 opacity-90 hover:opacity-100 hover:scale-110 transition-all duration-300"
                   />
                 </a>
               </div>
