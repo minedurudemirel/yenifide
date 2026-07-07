@@ -5,18 +5,22 @@ import { MdEmail } from "react-icons/md";
 import Select from "react-select";
 import { FaWhatsapp } from "react-icons/fa";
 import { universities } from "../data/universities";
+import DatePicker, { registerLocale } from "react-datepicker";
+import { tr } from "date-fns/locale";
+import "react-datepicker/dist/react-datepicker.css";
+
+registerLocale("tr", tr);
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     tcNo: "",
-    birthDate: "",
+    birthDate: null,
     email: "",
     phone: "",
     university: "",
     department: "",
     message: "",
   });
-  
   const universityOptions = universities.map((university) => ({
     value: university,
     label: university,
@@ -62,7 +66,12 @@ function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          birthDate: formData.birthDate
+            ? formData.birthDate.toLocaleDateString("tr-TR")
+            : "",
+        }),
       });
   
       setStatus("Başvurunuz başarıyla alındı.");
@@ -70,7 +79,7 @@ function Contact() {
       setFormData({
         name: "",
         tcNo: "",
-        birthDate: "",
+        birthDate: null,
         email: "",
         phone: "",
         university: "",
@@ -254,23 +263,42 @@ function Contact() {
   name="tcNo"
   placeholder="TC Kimlik No"
   value={formData.tcNo}
-  onChange={handleChange}
+  onChange={(e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    setFormData({
+      ...formData,
+      tcNo: value,
+    });
+  }}
   required
-  pattern="[0-9]{11}"
-  maxLength="11"
+  maxLength={11}
   inputMode="numeric"
   className="border border-gray-300 rounded-xl px-4 py-3"
 />
 
-<input
-  type="date"
-  name="birthDate"
-  placeholder="Doğum Tarihiniz"
-  value={formData.birthDate}
-  onChange={handleChange}
-  required
-  className="border border-gray-300 rounded-xl px-4 py-3"
+<div className="text-left">
+<DatePicker
+  locale="tr"
+  selected={formData.birthDate}
+  onChange={(date) =>
+    setFormData({
+      ...formData,
+      birthDate: date,
+    })
+  }
+  placeholderText="Doğum Tarihi"
+  dateFormat="dd.MM.yyyy"
+  showMonthDropdown
+  showYearDropdown
+  dropdownMode="select"
+  yearDropdownItemNumber={100}
+  scrollableYearDropdown
+  maxDate={new Date()}
+  showIcon
+  icon={<span>📅</span>}
+  className="w-full h-[50px] border border-gray-300 rounded-xl px-4"
 />
+</div>
 
   <input
     type="email"
@@ -287,7 +315,13 @@ function Contact() {
   name="phone"
   placeholder="05XXXXXXXXX"
   value={formData.phone}
-  onChange={handleChange}
+  onChange={(e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    setFormData({
+      ...formData,
+     phone: value,
+    });
+  }}
   required
   pattern="0[0-9]{10}"
   maxLength="11"
