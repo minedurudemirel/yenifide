@@ -1,7 +1,7 @@
 export const events = [
     {
         id: 1,
-        title: "LÖSEMİLİ ÇOCUKKLAR HAFTASI I",
+        title: "Lösemili Çocuklar Haftası I",
         category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
         date: "2-8 KASIM 2023",
         image: "/events/losemi.jpg",
@@ -120,7 +120,7 @@ export const events = [
   id: 13,
   title: "Deprem Bölgesi Yardımı II",
   category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
-  date: "2025",
+  date: "22 Mart 2025",
   image: "/events/deprem2.jpg",
   description:
     "Depremden etkilenen bölgelerde yürüttüğümüz destek çalışmalarını sürdürerek ihtiyaç sahiplerine yardım malzemeleri ulaştırdık. Dayanışmanın yalnızca zor günlerde değil, sonrasında da devam etmesi gerektiği bilinciyle sahada olmaya devam ettik.",

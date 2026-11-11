@@ -126,8 +126,8 @@ function EventJourney() {
             <div className="absolute -left-[230px] top-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full border border-[#0F3D3E]/20" />
 
             <div className="absolute left-6 top-1/2 -translate-y-1/2 z-10">
-              <p className="text-[#0F3D3E]/60 text-[10px] uppercase tracking-[0.3em] mb-2">
-                Aktif Tarih
+              <p className="text-[#0F3D3E]/60 text-[10px] tracking-[0.3em] mb-2">
+                AKTİF TARİH
               </p>
 
               <h3 className="text-4xl font-bold text-[#0F3D3E] leading-none">
