@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
@@ -10,7 +11,7 @@ function Navbar() {
   const menuItems = (
     <>
       <Link
-        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#557A70] transition-colors duration-300"
         to="/biz-kimiz"
         onClick={() => setMenuOpen(false)}
       >
@@ -18,7 +19,7 @@ function Navbar() {
       </Link>
 
       <Link
-        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#557A70] transition-colors duration-300"
         to="/etkinlikler"
         onClick={() => setMenuOpen(false)}
       >
@@ -26,7 +27,7 @@ function Navbar() {
       </Link>
 
       <Link
-        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#557A70] transition-colors duration-300"
         to="/geleceketkinlikler"
         onClick={() => setMenuOpen(false)}
       >
@@ -34,14 +35,15 @@ function Navbar() {
       </Link>
 
       <Link
-  className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
-  to="/basinda-fide"
-  onClick={() => setMenuOpen(false)}
->
-  BASINDA FİDE
-</Link>
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#557A70] transition-colors duration-300"
+        to="/basinda-fide"
+        onClick={() => setMenuOpen(false)}
+      >
+        BASINDA FİDE
+      </Link>
+
       <Link
-        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+        className="text-sm font-semibold text-[#0F3D3E] hover:text-[#557A70] transition-colors duration-300"
         to="/bize-ulasin"
         onClick={() => setMenuOpen(false)}
       >
@@ -126,7 +128,9 @@ function Navbar() {
           <HiOutlineMenuAlt3 size={32} />
         </button>
 
-        <div className="hidden md:flex gap-8 items-center">{menuItems}</div>
+        <div className="hidden md:flex gap-8 items-center">
+          {menuItems}
+        </div>
       </div>
 
       {menuOpen && (
@@ -166,25 +170,21 @@ function Navbar() {
               </p>
             </div>
 
-            <div className="my-8 flex items-center gap-4">
-              <div className="h-px flex-1 bg-[#B68D40]/50"></div>
-              <span className="text-[#B68D40] text-xl">❧</span>
-              <div className="h-px flex-1 bg-[#B68D40]/50"></div>
-            </div>
+            <div className="my-8 border-t border-[#0F3D3E]/15"></div>
 
             <div className="flex flex-col">
-              <div className="border-t border-[#B68D40]/50"></div>
+              <div className="border-t border-[#0F3D3E]/15"></div>
 
               {drawerMenuItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setMenuOpen(false)}
-                  className="group flex items-center justify-between border-b border-[#B68D40]/50 py-2 text-left text-lg font-semibold tracking-wide text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+                  className="group flex items-center justify-between border-b border-[#0F3D3E]/15 py-3 text-left text-lg font-semibold tracking-wide text-[#0F3D3E] hover:text-[#557A70] transition-colors duration-300"
                 >
                   <span>{item.label}</span>
 
-                  <span className="text-3xl leading-none text-[#0F3D3E] group-hover:translate-x-1 group-hover:text-[#B68D40] transition-all duration-300">
+                  <span className="text-3xl leading-none text-[#0F3D3E]/60 group-hover:translate-x-1 group-hover:text-[#557A70] transition-all duration-300">
                     ›
                   </span>
                 </Link>
@@ -192,12 +192,6 @@ function Navbar() {
             </div>
 
             <div className="mt-8 pb-4">
-              <div className="mb-7 flex items-center gap-4">
-                <div className="h-px flex-1 bg-[#B68D40]/50"></div>
-                <span className="text-[#B68D40] text-xl">❧</span>
-                <div className="h-px flex-1 bg-[#B68D40]/50"></div>
-              </div>
-
               <div className="flex justify-center gap-7">
                 <a
                   href="https://instagram.com/fikirvedegerler"

@@ -105,7 +105,7 @@ function HeroSection() {
           <div className="text-center mt-8">
             <Link
               to="/basinda-fide"
-              className="inline-flex items-center gap-3 text-[#D5B77A] hover:text-white transition-colors"
+               className="bg-[#0F3D3E] text-white px-8 py-4 rounded-full font-medium hover:bg-[#0F3D3E]/90 transition-all duration-300"
             >
               Tüm Basın Haberlerini Gör
               <span>↗</span>
