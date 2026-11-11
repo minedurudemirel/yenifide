@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 
@@ -98,10 +97,6 @@ function BasindaFide() {
       <section className="px-6 md:px-16 lg:px-24 pt-24 pb-16">
         <div className="max-w-7xl mx-auto">
 
-          <p className="text-[#B68D40] uppercase tracking-[0.3em] text-xs mb-6">
-            Fikir ve Değerler Derneği
-          </p>
-
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#0F3D3E] leading-tight">
             Basında FİDE
           </h1>
@@ -113,11 +108,11 @@ function BasindaFide() {
             dayanışma anlayışına ve çocuklara umut olma
             yolculuğuna basında yer verilen haberler.
           </p>
-
         </div>
+        
       </section>
         {/* VİDEO BÖLÜMÜ */}
-        <section className="bg-[#0F3D3E] text-[#F8F5EF] px-6 md:px-16 lg:px-24 py-20 md:py-28">
+        <section className="bg-[#F8F5EF] text-[#0F3D3E] px-6 md:px-16 lg:px-24 py-20 md:py-28">
         <div className="max-w-7xl mx-auto">
 
           <h2 className="font-serif text-2xl md:text-4xl leading-tight max-w-3xl">
@@ -125,11 +120,13 @@ function BasindaFide() {
             <br />
             Çalışmalarımız
           </h2>
+          <div className="w-20 h-[2px] bg-[#B68D40] mt-9 mb-8" />
 
-          <p className="text-[#D5DCD5] text-base leading-8 max-w-2xl mt-7 mb-12">
+          <p className="text-[#5D625D] text-base leading-8 max-w-2xl mt-7 mb-12">
             FİDE'nin kuruluş hikâyesini ve çocuklara umut olma
             yolculuğunu anlatan video içeriğimizi izleyebilirsiniz.
           </p>
+         
 
           <div className="w-full max-w-5xl aspect-video">
             <iframe
@@ -146,7 +143,7 @@ function BasindaFide() {
             href="https://youtu.be/Zi4PJKb_rPU"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 mt-8 text-sm text-[#D5B77A] hover:text-white transition-colors"
+            className="inline-flex items-center gap-3 mt-8 text-sm font-medium text-[#0F3D3E] hover:text-[#B68D40] transition-colors"
           >
             YouTube'da İzle
             <span aria-hidden="true">↗</span>
@@ -246,8 +243,8 @@ function BasindaFide() {
       <section className="px-6 md:px-16 lg:px-24 py-20 md:py-28">
         <div className="max-w-7xl mx-auto">
 
-          <p className="text-[#B68D40] text-xs tracking-[0.3em] uppercase mb-6">
-            Fikir ve Değerler Derneği
+          <p className="text-[#B68D40] text-xs tracking-[0.3em]  mb-6">
+            FİKİR ve DEĞERLER DERNEĞİ
           </p>
 
           <h2 className="font-serif text-3xl md:text-5xl text-[#0F3D3E] leading-tight max-w-3xl">
