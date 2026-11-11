@@ -81,6 +81,15 @@ export const events = [
         "Patipark Hayvan Barınağı'na gerçekleştirdiğimiz ziyarette can dostlarımızla vakit geçirerek onların yaşamlarına küçük de olsa dokunmaya çalıştık. Hayvan sevgisinin ve sorumluluk bilincinin önemini bir kez daha hatırladığımız bu anlamlı günde, gönüllülerimiz unutulmaz anılar biriktirdi.",
       },
       {
+        id: 23,
+        title: "Lösemili Çocuklar Haftası II",
+        category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
+        date: "2-8 Kasım 2024",
+        image: "/events/newhaber.jpg",
+        description:
+         "Türk gençliğinin maneviyatı için Lösemili Çocuklar Haftasında Bilkent Şehir Hastanesinde tedavi gören arkadaşlarımızı ziyaret ettik. ",
+      },
+      {
         id: 10,
         title: "FİDE'STA",
         category: "Sosyal Etkinlikler",
@@ -136,7 +145,7 @@ export const events = [
 },
 {
   id: 16,
-  title: "Lösemili Çocuklar Haftası",
+  title: "Lösemili Çocuklar Haftası III",
   category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
   date: "2-8 Kasım 2025",
   image:"/events/los.jpeg",
@@ -186,6 +195,14 @@ export const events = [
   image: "/events/antalya.jpg",
   description:
     "Kumluca Cumhuriyet İlkokulu'nda hayata geçirdiğimiz kütüphane projesiyle çocukları yeni kitaplarla buluşturduk. Gönüllülerimizin katkılarıyla oluşturulan kütüphane, öğrencilerin eğitim hayatına kalıcı bir değer kazandırdı.",
+},
+{
+  id: 22,
+  title: "Lösemili Çocuklar Haftası IV",
+  category: "Sosyal Sorumluluk ve Yardım Faaliyetleri",
+  date: "2-8 Kasım 2026",
+  image: "/events/avrupa-gazete.jpg",
+  description:"2–8 Kasım Lösemili Çocuklar Haftası kapsamında Bilkent Şehir Hastanesi'ni ziyaret ederek lösemiyle mücadele eden çocuklarla bir araya geldik. Onlara moral vermek, yüzlerinde bir tebessüm oluşturmak ve bu mücadelede yalnız olmadıklarını hissettirmek için gerçekleştirdiğimiz etkinliğimizde sevgi ve dayanışmayı paylaştık.FİDE olarak her çocuğun umut dolu bir geleceğe ulaşması için çalışmaya devam ediyoruz."
 },
 
   ];

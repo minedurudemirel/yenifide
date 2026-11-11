@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -35,7 +36,7 @@ function HeroSection() {
 
   return (
     <>
-      {/* HERO */}
+      {/* ANA HERO */}
       <section className="relative h-screen overflow-hidden bg-black">
         <video
           autoPlay
@@ -75,9 +76,49 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* ANNOUNCEMENTS */}
+      {/* BASINDA FİDE */}
+      <section className="bg-[#F8F5EF] text-[#0F3D3E] py-20 md:py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+
+        <div className="text-center mb-12">
+        <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase mb-4">
+       Basında FİDE
+      </p>
+
+            <h2 className="text-2xl font-bold text-center mb-6 font-playfair">
+            FİDE'nin hikâyesi, çalışmaları ve çocuklara umut olma
+            yolculuğu
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto aspect-video">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/Zi4PJKb_rPU"
+              title="Basında FİDE - Fikir ve Değerler Derneği"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              to="/basinda-fide"
+              className="inline-flex items-center gap-3 text-[#D5B77A] hover:text-white transition-colors"
+            >
+              Tüm Basın Haberlerini Gör
+              <span>↗</span>
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* DUYURULAR */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
+
           <div className="text-center mb-12">
             <p className="text-[#0F3D3E] font-semibold tracking-widest uppercase mb-4">
               Duyurular
@@ -135,7 +176,7 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* ANNOUNCEMENT MODAL */}
+      {/* DUYURU DETAY PENCERESİ */}
       {selectedAnnouncement && (
         <div
           onClick={() => setSelectedAnnouncement(null)}

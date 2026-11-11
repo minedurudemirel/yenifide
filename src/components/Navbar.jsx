@@ -34,6 +34,13 @@ function Navbar() {
       </Link>
 
       <Link
+  className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
+  to="/basinda-fide"
+  onClick={() => setMenuOpen(false)}
+>
+  BASINDA FİDE
+</Link>
+      <Link
         className="text-sm font-semibold text-[#0F3D3E] hover:text-[#B68D40] transition-colors duration-300"
         to="/bize-ulasin"
         onClick={() => setMenuOpen(false)}
@@ -47,6 +54,7 @@ function Navbar() {
     { label: "BİZ KİMİZ?", path: "/biz-kimiz" },
     { label: "ETKİNLİKLER", path: "/etkinlikler" },
     { label: "GELECEK ETKİNLİKLER", path: "/geleceketkinlikler" },
+    { label: "BASINDA FİDE", path: "/basinda-fide" },
     { label: "BİZE ULAŞIN", path: "/bize-ulasin" },
   ];
 

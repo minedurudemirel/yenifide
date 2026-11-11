@@ -5,6 +5,8 @@ import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Ortaklik from "./pages/ortaklik";
 import UpcomingEvents from "./pages/UpcomingEvents";
+import BasindaFide from "./pages/BasindaFide";
+
 
 // Import homepage sections
 import HeroSection from "./components/home/HeroSection";
@@ -40,6 +42,7 @@ function App() {
     path="/geleceketkinlikler"
     element={<UpcomingEvents />}
   />
+  <Route path="/basinda-fide" element={<BasindaFide />} />
       </Routes>
     </Layout>
   );

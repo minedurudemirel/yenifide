@@ -9,6 +9,7 @@ const selectedTitles = [
   "FİDE Hatıra Ormanı",
   "FİDEFEST",
   "Antalya Köy Okulu Kütüphane Projesi",
+  "Lösemili Çocuklar Haftası IV"
 ];
 
 function formatDate(date) {
